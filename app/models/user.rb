@@ -6,4 +6,9 @@ class User < ActiveRecord::Base
   validates :username, presence: true, uniqueness: true
 
   has_secure_password
+  enum role: %w(default, admin)
+
+  def admin?
+    role == "admin"
+  end
 end

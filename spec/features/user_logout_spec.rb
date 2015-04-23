@@ -8,7 +8,7 @@ RSpec.describe 'User logout' do
       visit login_path
       fill_in 'session[username]', with: 'bob1'
       fill_in 'session[password]', with: 'bobrocks'
-      click_link_or_button 'Login'
+      click_button 'Login'
 
       expect(page).to have_content("Welcome Bob!")
 

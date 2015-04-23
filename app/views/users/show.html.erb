@@ -3,11 +3,10 @@
 <h3>Your Songs:</h3>
 <ul>
   <% current_user.songs.each do |song| %>
-    <li>Title: <%= song.title%> Song: <%= song.artist %>
+    <li>Title: <%= song.title%> Song: <%= song.artist %> Tag: <%= song.tag %>
     <%= link_to 'Edit Song', edit_song_path(song) %></li>
   <% end %>
 </ul>
 
 
 <%= link_to 'Add Songs', new_song_path %>
-<%= link_to 'Logout', logout_path, method: :delete %>
